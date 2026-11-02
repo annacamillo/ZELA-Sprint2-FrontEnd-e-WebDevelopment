@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZELA - Registrar ocorrência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <script src="js/ocorrencia.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="index.html" class="cabecalho__marca">
+            <img src="img/logo-zela.png" alt="ZELA - página inicial" class="cabecalho__logo">
+        </a>
+
+        <nav class="cabecalho__navegacao">
+            <a href="index.html" class="cabecalho__link">Morador</a>
+            <a href="ocorrencia.html" class="cabecalho__link" aria-current="page">Registrar ocorrência</a>
+            <a href="autoridade.html" class="cabecalho__link">Defesa Civil</a>
+        </nav>
+    </header>
+
+    <main class="pagina">
+
+        <form class="formulario" action="confirmacao.html" method="get"
+            novalidate onsubmit="return validarFormulario()">
+
+            <h1 class="formulario__titulo">Registrar ocorrência</h1>
+            <p class="formulario__subtitulo">Ajude a cidade informando o que você viu.</p>
+
+            <fieldset class="grupo" id="grupo-tipo">
+                <legend class="grupo__titulo">Tipo de ocorrência</legend>
+
+                <div class="opcoes">
+                    <div class="opcao">
+                        <input type="radio" id="tipo-via" name="tipo" value="via_interditada" class="opcao__entrada" required>
+                        <label for="tipo-via" class="opcao__rotulo"><span aria-hidden="true">🚧</span> Via interditada</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="radio" id="tipo-alagamento" name="tipo" value="alagamento" class="opcao__entrada">
+                        <label for="tipo-alagamento" class="opcao__rotulo"><span aria-hidden="true">🌊</span> Alagamento</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="radio" id="tipo-arvore" name="tipo" value="arvore_caida" class="opcao__entrada">
+                        <label for="tipo-arvore" class="opcao__rotulo"><span aria-hidden="true">🌳</span> Árvore caída</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="radio" id="tipo-bueiro" name="tipo" value="bueiro_entupido" class="opcao__entrada">
+                        <label for="tipo-bueiro" class="opcao__rotulo"><span aria-hidden="true">🕳️</span> Bueiro entupido</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="radio" id="tipo-descarte" name="tipo" value="descarte_irregular" class="opcao__entrada">
+                        <label for="tipo-descarte" class="opcao__rotulo"><span aria-hidden="true">🗑️</span> Descarte irregular</label>
+                    </div>
+                    <div class="opcao">
+                        <input type="radio" id="tipo-outro" name="tipo" value="outro" class="opcao__entrada">
+                        <label for="tipo-outro" class="opcao__rotulo"><span aria-hidden="true">❓</span> Outro</label>
+                    </div>
+                </div>
+
+                <p class="campo__erro" id="erro-tipo"></p>
+            </fieldset>
+
+           
+            <fieldset class="grupo">
+                <legend class="grupo__titulo">Local</legend>
+
+                <div class="local__linha">
+                    <div class="campo" id="campo-endereco">
+                        <label for="endereco" class="campo__rotulo"> Endereço ou ponto de referência </label>
+                        <input type="text" id="endereco" name="endereco" class="campo__entrada" placeholder="Ex.: Rua Halfeld, em frente à padaria" aria-describedby="ajuda-endereco erro-endereco" required >
+                        <p class="campo__ajuda" id="ajuda-endereco"> Informe rua e número ou um ponto conhecido. </p>
+                        <p class="campo__erro" id="erro-endereco"></p>
+                    </div>
+
+                <button type="button" class="botao botao--secundario local__botao" id="botao-localizacao" onclick="usarLocalizacao()">
+                    Usar minha localização
+                </button>
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+                <legend class="grupo__titulo">Foto e descrição (opcional)</legend>
+
+                <div class="campo" id="campo-foto">
+                    <label for="foto" class="campo__rotulo">Foto</label>
+                    <p class="campo__ajuda" id="ajuda-foto">Relatos com foto são confirmados mais rápido.</p>
+                    <input type="file" id="foto" name="foto" accept="image/*" class="campo__arquivo"
+                        aria-describedby="ajuda-foto erro-foto">
+                    <p class="campo__erro" id="erro-foto"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao" class="campo__rotulo">Descrição</label>
+
+                    <textarea id="descricao" name="descricao" maxlength="200" class="campo__entrada campo__entrada--longa"
+                        placeholder="Ex.: água cobrindo metade da rua"
+                        aria-describedby="contador-descricao erro-descricao"
+                        oninput="atualizarContador()"></textarea>
+
+                    <p class="campo__ajuda" id="contador-descricao">0/200</p>
+                    <p class="campo__erro" id="erro-descricao"></p>
+                </div>
+            </fieldset>
+
+            <p class="formulario__erro-geral" id="erro-geral"></p>
+
+            <div class="formulario__acoes">
+                <a href="index.html" class="botao botao--secundario">Voltar</a>
+                <button type="submit" class="botao botao--primario" id="botao-enviar">Enviar ocorrência</button>
+            </div>
+        </form>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Simulação acadêmica. Nenhuma ocorrência é enviada a serviços reais.</p>
+    </footer>
+
+</body>
+</html>
