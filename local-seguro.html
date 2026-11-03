@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZELA - Locais Seguros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+    <a href="index.html" class="cabecalho__marca">
+        <img src="img/logo-zela.png" alt="ZELA" class="cabecalho__logo">
+    </a>
+
+    <nav class="cabecalho__navegacao">
+        <a href="index.html" class="cabecalho__link">Morador</a>
+        <a href="local-seguro.html" class="cabecalho__link" aria-current="page">Locais Seguros</a>
+        <a class="cabecalho__link" href="ocorrencia.html">Registrar ocorrência</a>        
+        <a href="autoridade.html" class="cabecalho__link">Defesa Civil</a>
+    </nav>
+</header>
+
+    <main class="morador">
+
+        <h1 class="morador__titulo">
+            Consultar locais seguros
+        </h1>
+
+        <p class="morador__descricao">
+            Informe sua localização e consulte os abrigos demonstrativos disponíveis.
+        </p>
+
+
+        <section class="alerta">
+            <h2 class="alerta__titulo">Alerta da região</h2>
+
+            <p id="nivelRisco" class="alerta__nivel">
+                RISCO MODERADO
+            </p>
+
+            <p id="mensagemAlerta" class="alerta__mensagem">
+                Atenção: há condições que exigem acompanhamento.
+                Fique atento aos comunicados da Defesa Civil.
+            </p>
+
+            <p class="alerta__aviso">
+                Alerta fictício para demonstração acadêmica.
+            </p>
+        </section>
+        
+        <section class="rotas">
+
+            <h2 class="abrigos__titulo">Abrigos seguros</h2>
+            <p class="abrigos__descricao">
+                Selecione um abrigo para visualizar a rota.
+            </p>
+
+            <button type="button" id="botaoAbrigoA" class="abrigos__botao abrigos__botao--selecionado"
+            onclick="selecionarAbrigoA()">
+                Abrigo A
+            </button>
+
+            <button type="button" id="botaoAbrigoB" class="abrigos__botao"
+            onclick="selecionarAbrigoB()">
+                Abrigo B
+            </button>
+            
+            <p id="infoAbrigo" class="abrigos__informacao">
+                Abrigo A — Ponto de apoio demonstrativo. Rota A selecionada.
+            </p>
+
+            <section class="mapa">
+
+                <img
+                    src="img/mapa-abrigo-a.png"
+                    alt="Mapa demonstrativo com rota para o Abrigo A em Juiz de Fora"
+                    id="imagemMapa"
+                    class="mapa__imagem"
+                >
+
+                <p class="mapa__aviso">
+                    Simulação acadêmica: rotas e abrigos ilustrativos,
+                    não validados pela Defesa Civil.
+                </p>
+            </section>
+        </section>
+
+
+
+    </main>
+
+    <script src="js/morador.js"></script>
+
+</body>
+</html>
