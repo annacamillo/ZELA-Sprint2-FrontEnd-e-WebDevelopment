@@ -122,90 +122,11 @@ body {
     margin: 20px 0 0;
 }
 
-/* CARD DE ROTAS E ABRIGOS */
+/* Área do mapa demonstrativo */
 
 .rotas {
     display: grid;
-    grid-template-columns: 2fr auto auto 2fr;
-    align-items: center;
-    column-gap: 16px;
-    row-gap: 8px;
-    background: #FFFFFF;
-    border: 1px solid #D5E4EB;
-    border-radius: 20px;
-    padding: 24px;
-}
-
-/* TÍTULO E DESCRIÇÃO DOS ABRIGOS */
-
-.abrigos__titulo {
-    grid-column: 1;
-    grid-row: 1;
-    color: #0F4C5C;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.abrigos__descricao {
-    grid-column: 1;
-    grid-row: 2;
-    color: #0E2030;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* BOTÕES DOS ABRIGOS */
-
-.abrigos__botao {
-    background: #EAF4F8;
-    color: #0F4C5C;
-    border: 1px solid #0F4C5C;
-    border-radius: 10px;
-    padding: 12px 20px;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.abrigos__botao:hover {
-    background: #D5E4EB;
-}
-
-.abrigos__botao--selecionado {
-    background: #0F4C5C;
-    color: #FFFFFF;
-}
-
-.abrigos__botao--selecionado:hover {
-    background: #0E2030;
-}
-
-#botaoAbrigoA {
-    grid-column: 2;
-    grid-row: 1 / 3;
-}
-
-#botaoAbrigoB {
-    grid-column: 3;
-    grid-row: 1 / 3;
-}
-
-/* INFORMAÇÃO DO ABRIGO SELECIONADO */
-
-.abrigos__informacao {
-    grid-column: 4;
-    grid-row: 1 / 3;
-    background: #EAF4F8;
-    border-left: 4px solid #0F4C5C;
-    border-radius: 10px;
-    padding: 12px;
-    color: #0E2030;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
+    grid-template-columns: 1fr;
 }
 
 /* MAPA DE ROTAS */
@@ -490,3 +411,129 @@ body {
 .rodape p {
     margin: 0;
 }
+
+/* Consulta de locais seguros */
+
+.consulta {
+    background: #FFFFFF;
+    border: 1px solid #D5E4EB;
+    border-radius: 20px;
+    padding: 24px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.consulta__titulo,
+.consulta__descricao {
+    grid-column: 1 / -1;
+}
+
+.consulta__titulo {
+    font-size: 20px;
+    color: #0F4C5C;
+    margin: 0;
+}
+
+.consulta__descricao {
+    margin: 0;
+    color: #0E2030;
+}
+
+.consulta__botao {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+.consulta__resultado {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-top: 12px;
+    color: #2E7D32;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.consulta__resultado:empty {
+    display: none;
+}
+
+/* Mapa integrado ao card de consulta */
+
+.consulta .rotas--consulta {
+    grid-column: 1 / -1;
+}
+
+/* Oculta o mapa antes da consulta */
+
+.rotas--consulta.rotas--ocultas {
+    display: none;
+}
+
+/* ACESSOS DO DASHBOARD */
+
+.acessos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.acessos__titulo {
+    color: #0F4C5C;
+    font-size: 20px;
+    margin: 0;
+}
+
+.acessos__lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.acessos__card {
+    background: #FFFFFF;
+    border: 1px solid #D5E4EB;
+    border-radius: 20px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.acessos__card h3 {
+    color: #0F4C5C;
+    font-size: 18px;
+    margin: 0;
+}
+
+.acessos__card p {
+    color: #0E2030;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+.acessos__botao {
+    background: #0F4C5C;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 12px 16px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.acessos__botao:hover {
+    background: #0E2030;
+}
+
+.acessos__botao:focus-visible {
+    outline: 3px solid #6B7FCB;
+    outline-offset: 3px;
+}
+
