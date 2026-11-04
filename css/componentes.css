@@ -66,11 +66,29 @@
 }
 
 /* DISABLED */
+
 .botao:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
 }
+
+.botao--primario:disabled:hover {
+    background-color: #0F4C5C;
+}
+
+.botao--secundario:disabled:hover {
+    background-color: #FFFFFF;
+}
+
+.botao--emergencia:disabled:hover {
+    border-color: transparent;
+}
+
+.botao--erro:disabled:hover {
+    background-color: #FFFFFF;
+}
+
 
 /* ---------- LINK SIMPLES ---------- */
 
@@ -86,95 +104,6 @@
 .link:focus {
     outline: 3px solid #6B7FCB;
     outline-offset: 2px;
-}
-
-/* ---------- SELO (nível de risco e status) ---------- */
-
-.selo {
-    display: inline-block;
-    margin: 0;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: 1px solid;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.selo--risco-baixo {
-    background-color: #FFF8DB;
-    color: #705400;
-    border-color: #F9A825;
-}
-
-.selo--risco-moderado {
-    background-color: #FFF0DC;
-    color: #9A4500;
-    border-color: #EF6C00;
-}
-
-.selo--risco-alto {
-    background-color: #FCE8E8;
-    color: #A31E1E;
-    border-color: #C62828;
-}
-
-.selo--seguro {
-    background-color: #E7F5E8;
-    color: #2E7D32;
-    border-color: #2E7D32;
-}
-
-/* ---------- CARD DE ALERTA ---------- */
-
-.card-alerta {
-    background-color: #FFFFFF;
-    border-radius: 16px;        
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(14, 32, 48, 0.08);  
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;   
-    gap: 16px;
-}
-
-.card-alerta__titulo {
-    font-size: 28px;             
-    font-weight: 600;
-    line-height: 1.2;
-    margin: 0;
-}
-
-.card-alerta__mensagem {
-    margin: 0;
-}
-
-.card-alerta__aviso {
-    font-size: 14px;
-    color: #0F4C5C;
-    margin: 0;
-}
-
-/* ---------- ATALHOS (bloco do dashboard) ---------- */
-
-.atalhos {
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(14, 32, 48, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-.atalhos__titulo {
-    font-size: 20px;            
-    font-weight: 600;
-    margin: 0;
-}
-
-.atalhos__descricao {
-    margin: 0;
 }
 
 /* ---------- FORMULÁRIO ---------- */
@@ -470,4 +399,73 @@
 
 .local__botao {
     margin-top: 28px;
+}
+
+/* RESPONSIVIDADE DO FORMULÁRIO */
+
+@media (max-width: 768px) {
+
+    /* Formulário mais compacto no celular */
+
+    .formulario {
+        padding: 24px 16px;
+    }
+
+    .formulario__titulo {
+        font-size: 28px;
+    }
+
+    .grupo {
+        padding: 12px;
+    }
+
+    /* Organiza as opções de ocorrência em uma coluna */
+
+    .opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Coloca o botão de localização abaixo do endereço */
+
+    .local__linha {
+        grid-template-columns: 1fr;
+    }
+
+    .local__botao {
+        margin-top: 0;
+    }
+
+    /* Organiza os botões finais um abaixo do outro */
+
+    .formulario__acoes {
+        flex-direction: column;
+    }
+
+    .formulario__acoes .botao {
+        width: 100%;
+    }
+
+    /* Evita que o campo de foto ultrapasse a largura */
+
+    .campo__arquivo {
+        max-width: 100%;
+    }
+
+    /* Responsividade da página de confirmação */
+
+    .banner {
+    padding: 24px 16px;
+    }
+
+    .banner__titulo {
+    font-size: 28px;
+    }
+
+    .banner__acoes {
+    width: 100%;
+    }
+
+    .banner__acoes .botao {
+    width: 100%;
+    }
 }

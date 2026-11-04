@@ -53,6 +53,14 @@ body {
     background: #EAF4F8;
 }
 
+/* Acessibilidade - Foco na navegação pelo teclado */
+
+.cabecalho__marca:focus-visible,
+.cabecalho__link:focus-visible {
+    outline: 3px solid #6B7FCB;
+    outline-offset: 3px;
+}
+
 /* DASHBOARD DO MORADOR */
 
 .morador {
@@ -84,6 +92,12 @@ body {
     border: 1px solid #D5E4EB;
     border-radius: 20px;
     padding: 24px;
+}
+
+/* Destaque visual para o risco moderado */
+
+.alerta--moderado {
+    border-left: 4px solid #EF6C00;
 }
 
 .alerta__titulo {
@@ -233,24 +247,6 @@ body {
     color: #0F4C5C;
 }
 
-/* BOTÕES DE RISCO */
-
-.gerenciamento__botao {
-    background: #0F4C5C;
-    color: #FFFFFF;
-    border: 1px solid #0F4C5C;
-    border-radius: 10px;
-    padding: 12px 20px;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.gerenciamento__botao:hover {
-    background: #0E2030;
-}
-
 /* ALERTA SELECIONADO */
 
 .gerenciamento__nivel {
@@ -337,6 +333,12 @@ body {
     border-radius: 12px;
     padding: 20px;
 }
+/* Destaca uma ocorrência quando ela é verificada. */
+
+.ocorrencias__item--verificada {
+    background-color: #F1F8F2;
+    border: 2px solid #2E7D32;
+}
 
 .ocorrencias__item h3 {
     font-size: 18px;
@@ -371,13 +373,6 @@ body {
 
 .ocorrencias__botao {
     grid-column: 2;
-    background: #0F4C5C;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
 }
 
 .ocorrencias__aviso {
@@ -517,23 +512,107 @@ body {
     flex: 1;
 }
 
-.acessos__botao {
-    background: #0F4C5C;
-    color: #FFFFFF;
-    border-radius: 10px;
-    padding: 12px 16px;
 
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
+/* RESPONSIVIDADE - TELAS MENORES */
+
+@media (max-width: 768px) {
+
+    /* Cabeçalho */
+
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .cabecalho__navegacao {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .cabecalho__link {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    /* Página Início */
+
+    .morador {
+        padding: 24px 16px;
+        gap: 20px;
+    }
+
+    .morador__titulo {
+        font-size: 28px;
+    }
+
+    .acessos__lista {
+        grid-template-columns: 1fr;
+    }
+
+    .acessos__card {
+        padding: 20px;
+    }
+
+    
+/* RESPONSIVIDADE - DEFESA CIVIL */
+
+/* Ajusta os espaçamentos da página */
+
+    .autoridade {
+    padding: 24px 16px;
+    gap: 20px;
+    }
+
+    .autoridade__titulo {
+    font-size: 28px;
+    }
+
+/* Gerenciamento de alertas em uma coluna */
+
+    .gerenciamento {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+    }
+
+    .gerenciamento__selecao {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+    }
+
+    .gerenciamento__confirmar {
+    grid-column: 1;
+    }
+
+    .gerenciamento > .botao {
+    width: 100%;
+    }
+
+/* Cards de ocorrências em uma coluna */
+
+    .ocorrencias {
+    padding: 20px 16px;
+    }
+
+    .ocorrencias__item {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    }
+
+    .ocorrencias__status {
+    grid-column: 1;
+    justify-self: start;
+    }
+
+    .ocorrencias__descricao {
+    grid-column: 1;
+    }
+
+    .ocorrencias__botao {
+    grid-column: 1;
+    width: 100%;
+    }
 }
-
-.acessos__botao:hover {
-    background: #0E2030;
-}
-
-.acessos__botao:focus-visible {
-    outline: 3px solid #6B7FCB;
-    outline-offset: 3px;
-}
-

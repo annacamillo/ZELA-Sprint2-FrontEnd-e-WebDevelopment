@@ -61,7 +61,7 @@
                     </div>
                 </div>
 
-                <p class="campo__erro" id="erro-tipo"></p>
+                <p class="campo__erro" id="erro-tipo" aria-live="polite"></p>
             </fieldset>
 
            
@@ -73,7 +73,7 @@
                         <label for="endereco" class="campo__rotulo"> Endereço ou ponto de referência </label>
                         <input type="text" id="endereco" name="endereco" class="campo__entrada" placeholder="Ex.: Rua Halfeld, em frente à padaria" aria-describedby="ajuda-endereco erro-endereco" required >
                         <p class="campo__ajuda" id="ajuda-endereco"> Informe rua e número ou um ponto conhecido. </p>
-                        <p class="campo__erro" id="erro-endereco"></p>
+                        <p class="campo__erro" id="erro-endereco" aria-live="polite"></p>
                     </div>
 
                 <button type="button" class="botao botao--secundario local__botao" id="botao-localizacao" onclick="usarLocalizacao()" >
@@ -87,10 +87,10 @@
 
                 <div class="campo" id="campo-foto">
                     <label for="foto" class="campo__rotulo">Foto</label>
-                    <p class="campo__ajuda" id="ajuda-foto">Relatos com foto são confirmados mais rápido.</p>
+                    <p class="campo__ajuda" id="ajuda-foto">Se quiser, adicione uma foto para ilustrar a ocorrência.</p>
                     <input type="file" id="foto" name="foto" accept="image/*" class="campo__arquivo"
                         aria-describedby="ajuda-foto erro-foto">
-                    <p class="campo__erro" id="erro-foto"></p>
+                    <p class="campo__erro" id="erro-foto" aria-live="polite"></p>
                 </div>
 
                 <div class="campo">
@@ -106,7 +106,7 @@
                 </div>
             </fieldset>
 
-            <p class="formulario__erro-geral" id="erro-geral"></p>
+            <p class="formulario__erro-geral" id="erro-geral" role="alert"></p>
 
             <div class="formulario__acoes">
                 <a href="index.html" class="botao botao--secundario">Voltar</a>

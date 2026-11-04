@@ -46,7 +46,7 @@ function validarFormulario() {
         let tipoArquivo = foto.files[0].type;
 
         if (tipoArquivo.startsWith("image/") === false) {
-            document.getElementById("erro-foto").innerText = "Escolha um arquivo de imagem (JPG ou PNG).";
+            document.getElementById("erro-foto").innerText = "Selecione um arquivo de imagem válido";
             document.getElementById("campo-foto").setAttribute("class", "campo campo--erro");
             temErro = true;
         }
