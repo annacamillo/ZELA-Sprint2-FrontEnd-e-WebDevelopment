@@ -1,0 +1,471 @@
+/*botões, campos, seleção, card e banners, com os estados*/
+
+.botao {
+    display: inline-block;       
+    font-family: inherit;         
+    font-size: 16px;          
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;        
+    padding: 16px 24px;          
+    border: 2px solid transparent;
+    border-radius: 12px;           
+    cursor: pointer;
+}
+
+.botao--primario {
+    background-color: #0F4C5C;
+    color: #FFFFFF;
+}
+
+.botao--primario:hover {
+    background-color: #0E2030;
+}
+
+.botao--secundario {
+    background-color: #FFFFFF;
+    border-color: #0F4C5C;
+    color: #0F4C5C;
+}
+
+.botao--secundario:hover {
+    background-color: #EAF4F8;
+}
+
+.botao--emergencia {
+    background-color: #C62828;
+    color: #FFFFFF;
+    font-size: 18px;            
+}
+
+.botao--emergencia:hover {
+    border-color: #0E2030;
+}
+
+/* ERROR */
+.botao--erro {
+    background-color: #FFFFFF;
+    border-color: #C62828;
+    color: #C62828;
+}
+
+.botao--erro:hover {
+    background-color: #EAF4F8;
+}
+
+/* FOCUS */
+.botao:focus {
+    outline: 3px solid #6B7FCB;
+    outline-offset: 4px;
+}
+
+/* ACTIVE */
+.botao:active {
+    transform: scale(0.96);
+}
+
+/* DISABLED */
+
+.botao:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.botao--primario:disabled:hover {
+    background-color: #0F4C5C;
+}
+
+.botao--secundario:disabled:hover {
+    background-color: #FFFFFF;
+}
+
+.botao--emergencia:disabled:hover {
+    border-color: transparent;
+}
+
+.botao--erro:disabled:hover {
+    background-color: #FFFFFF;
+}
+
+
+/* ---------- LINK SIMPLES ---------- */
+
+.link {
+    color: #0F4C5C;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: #0E2030;
+}
+
+.link:focus {
+    outline: 3px solid #6B7FCB;
+    outline-offset: 2px;
+}
+
+/* ---------- FORMULÁRIO ---------- */
+
+.formulario {
+    background-color: #FFFFFF;
+    border: 2px solid #0F4C5C;     
+    border-radius: 24px;        
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formulario__titulo {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.formulario__subtitulo {
+    color: #0F4C5C;
+    margin: 0;
+}
+
+.formulario__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.formulario__erro-geral {
+    color: #C62828;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ---------- GRUPO DE CAMPOS (fieldset) ---------- */
+
+.grupo {
+    border: 2px solid #6B7FCB;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 0;
+    min-width: 0;      
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.grupo__titulo {
+    font-size: 20px;             
+    font-weight: 600;
+    color: #0F4C5C;
+    padding: 0 8px;
+}
+
+/* ---------- SELEÇÃO EM CARDS  ---------- */
+
+.opcoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    gap: 8px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    border: 2px solid #6B7FCB;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+
+.opcao__entrada {
+    margin: 0 0 0 16px;      
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;      
+}
+
+.opcao__rotulo {
+    flex: 1;            
+    padding: 16px 16px 16px 8px;
+    cursor: pointer;
+}
+
+/* HOVER */
+.opcao:hover {
+    border-color: #0F4C5C;
+}
+
+/* FOCUS */
+.opcao:has(.opcao__entrada:focus) {
+    outline: 3px solid #6B7FCB;
+    outline-offset: 2px;
+}
+
+/* ACTIVE (selecionado) */
+.opcao:has(.opcao__entrada:checked) {
+    border-color: #0F4C5C;
+    background-color: #EAF4F8;
+    font-weight: 600;
+}
+
+/* DISABLED */
+.opcao:has(.opcao__entrada:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ERROR */
+.grupo--erro {
+    border-color: #C62828;
+}
+
+.grupo--erro .opcao {
+    border-color: #C62828;
+}
+
+/* ---------- CAMPO DE TEXTO ---------- */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo__rotulo {
+    font-weight: 600;
+}
+
+.campo__entrada {
+    font-family: inherit;
+    font-size: 16px;
+    color: #0E2030;
+    padding: 16px;
+    border: 2px solid #6B7FCB;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.campo__entrada--longa {
+    height: 120px;
+    resize: vertical;       
+}
+
+/* HOVER */
+.campo__entrada:hover {
+    border-color: #0F4C5C;
+}
+
+/* FOCUS */
+.campo__entrada:focus {
+    border-color: #0F4C5C;
+    outline: 3px solid #6B7FCB;
+    outline-offset: 2px;
+}
+
+/* ACTIVE */
+.campo__entrada:active {
+    background-color: #EAF4F8;
+}
+
+/* DISABLED */
+.campo__entrada:disabled {
+    background-color: #EAF4F8;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ERROR */
+.campo--erro .campo__entrada {
+    border-color: #C62828;
+}
+
+/* Corrige o hover para não reagir quando o campo está desabilitado */
+.campo__entrada:disabled:hover {
+    border-color: #6B7FCB;
+}
+
+/* ERROR: também reage ao aria-invalid */
+.campo__entrada[aria-invalid="true"] {
+    border-color: #C62828;
+}
+
+/* ---------- CAMPO DE SELEÇÃO ---------- */
+
+.campo__selecao {
+    cursor: pointer;
+}
+
+/* ACTIVE: lista aberta */
+.campo__selecao:active {
+    border-color: #0F4C5C;
+}
+
+.campo__ajuda {
+    font-size: 14px;          
+    color: #0F4C5C;
+    margin: 0;
+}
+
+.campo__erro {
+    font-size: 14px;
+    font-weight: 600;
+    color: #C62828;
+    margin: 0;
+}
+
+.campo__erro:empty,
+.formulario__erro-geral:empty {
+    display: none;
+}
+
+.campo__arquivo {
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.campo__arquivo:focus {
+    outline: 3px solid #6B7FCB;
+    outline-offset: 2px;
+}
+
+/* ---------- BANNER DE FEEDBACK (confirmação) ---------- */
+
+.banner {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.banner--sucesso {
+    border: 2px solid #2E7D32;     
+}
+
+.banner__icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    border-radius: 50%;
+    background-color: #E7F5E8;
+    color: #2E7D32;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.banner__titulo {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2E7D32;    
+    margin: 0;
+}
+
+.banner__mensagem {
+    margin: 0;
+}
+
+.banner__aviso {
+    font-size: 14px;
+    color: #0F4C5C;
+    margin: 0;
+}
+
+.banner__acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Organização do campo de localização */
+
+.local__linha {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.local__botao {
+    margin-top: 28px;
+}
+
+/* RESPONSIVIDADE DO FORMULÁRIO */
+
+@media (max-width: 768px) {
+
+    /* Formulário mais compacto no celular */
+
+    .formulario {
+        padding: 24px 16px;
+    }
+
+    .formulario__titulo {
+        font-size: 28px;
+    }
+
+    .grupo {
+        padding: 12px;
+    }
+
+    /* Organiza as opções de ocorrência em uma coluna */
+
+    .opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Coloca o botão de localização abaixo do endereço */
+
+    .local__linha {
+        grid-template-columns: 1fr;
+    }
+
+    .local__botao {
+        margin-top: 0;
+    }
+
+    /* Organiza os botões finais um abaixo do outro */
+
+    .formulario__acoes {
+        flex-direction: column;
+    }
+
+    .formulario__acoes .botao {
+        width: 100%;
+    }
+
+    /* Evita que o campo de foto ultrapasse a largura */
+
+    .campo__arquivo {
+        max-width: 100%;
+    }
+
+    /* Responsividade da página de confirmação */
+
+    .banner {
+    padding: 24px 16px;
+    }
+
+    .banner__titulo {
+    font-size: 28px;
+    }
+
+    .banner__acoes {
+    width: 100%;
+    }
+
+    .banner__acoes .botao {
+    width: 100%;
+    }
+}

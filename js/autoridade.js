@@ -43,20 +43,29 @@ function atualizarRegiao() {
 
 // Alterna o status de uma ocorrência entre pendente e verificada.
 function verificarOcorrencia(numero) {
-    // Localiza o status e o botão da ocorrência usando o número recebido.
+
+    // Localiza o status, o botão e o card da ocorrência.
     let status = document.getElementById("statusOcorrencia" + numero);
     let botao = document.getElementById("botaoOcorrencia" + numero);
+    let card = document.getElementById("cardOcorrencia" + numero);
 
-    // Se estiver pendente, marca como verificada e muda a aparência e o botão.
+    // Se estiver pendente, marca como verificada.
     if (status.innerText === "Pendente") {
         status.innerText = "Verificada";
         status.setAttribute("class", "ocorrencias__status ocorrencias__status--verificada");
         botao.innerText = "Desfazer verificação";
 
-    // Se já estiver verificada, volta ao status pendente.
+        // Aplica o retorno visual de sucesso da Frente C.
+        card.setAttribute("class", "ocorrencias__item ocorrencias__item--verificada");
+
+    // Se já estiver verificada, retorna ao estado pendente.
     } else {
         status.innerText = "Pendente";
         status.setAttribute("class", "ocorrencias__status ocorrencias__status--pendente");
         botao.innerText = "Marcar como verificada";
+
+        // Retorna o card à aparência original.
+        card.setAttribute("class", "ocorrencias__item");
     }
 }
+

@@ -1,98 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZELA - Dashboard do Morador</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZELA - Início</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="cabecalho">
-    <a href="index.html" class="cabecalho__marca">
-        <img src="img/logo-zela.png" alt="ZELA" class="cabecalho__logo">
-    </a>
+      <a href="index.html" class="cabecalho__marca">
+        <img src="img/logo-zela.png" alt="ZELA" class="cabecalho__logo" />
+      </a>
 
-    <nav class="cabecalho__navegacao">
-        <a href="index.html" class="cabecalho__link">Morador</a>
+      <nav class="cabecalho__navegacao">
+        <a href="index.html" class="cabecalho__link" aria-current="page"
+          >Início</a
+        >
+        <a href="local-seguro.html" class="cabecalho__link">Locais Seguros</a>
+        <a class="cabecalho__link" href="ocorrencia.html"
+          >Registrar ocorrência</a
+        >
         <a href="autoridade.html" class="cabecalho__link">Defesa Civil</a>
-    </nav>
-</header>
+      </nav>
+    </header>
 
     <main class="morador">
+      <h1 class="morador__titulo">Bem-vindo ao ZELA</h1>
 
-        <h1 class="morador__titulo">
-            Dashboard do Morador
-        </h1>
+      <p class="morador__descricao">
+        Acompanhe os alertas e acesse as funcionalidades do ZELA.
+      </p>
 
-        <p class="morador__descricao">
-            Consulte alertas e encontre locais seguros.
+      <section class="alerta alerta--moderado">
+        <h2 class="alerta__titulo">Alerta da região</h2>
+
+        <p id="nivelRisco" class="alerta__nivel">RISCO MODERADO</p>
+
+        <p id="mensagemAlerta" class="alerta__mensagem">
+          Atenção: há condições que exigem acompanhamento. Fique atento aos
+          comunicados da Defesa Civil.
         </p>
 
+        <p class="alerta__aviso">
+          Alerta fictício para demonstração acadêmica.
+        </p>
+      </section>
 
-        <section class="alerta">
-            <h2 class="alerta__titulo">Alerta da região</h2>
+      <section class="acessos">
+        <h2 class="acessos__titulo">O que você deseja fazer?</h2>
 
-            <p id="nivelRisco" class="alerta__nivel">
-                RISCO MODERADO
+        <div class="acessos__lista">
+          <article class="acessos__card">
+            <h3>Locais seguros</h3>
+
+            <p>Consulte os abrigos e visualize rotas demonstrativas.</p>
+
+            <a href="local-seguro.html" class="botao botao--primario">
+              Consultar locais
+            </a>
+          </article>
+
+          <article class="acessos__card">
+            <h3>Registrar ocorrência</h3>
+
+            <p>Informe uma situação de risco encontrada na cidade.</p>
+
+            <a href="ocorrencia.html" class="botao botao--primario">
+              Registrar ocorrência
+            </a>
+          </article>
+
+          <article class="acessos__card">
+            <h3>Defesa Civil</h3>
+
+            <p>
+              Acesse o painel demonstrativo de monitoramento de alertas e
+              ocorrências.
             </p>
 
-            <p id="mensagemAlerta" class="alerta__mensagem">
-                Atenção: há condições que exigem acompanhamento.
-                Fique atento aos comunicados da Defesa Civil.
-            </p>
-
-            <p class="alerta__aviso">
-                Alerta fictício para demonstração acadêmica.
-            </p>
-        </section>
-        
-        <section class="rotas">
-
-            <h2 class="abrigos__titulo">Abrigos seguros</h2>
-            <p class="abrigos__descricao">
-                Selecione um abrigo para visualizar a rota.
-            </p>
-
-            <button type="button" id="botaoAbrigoA" class="abrigos__botao abrigos__botao--selecionado"
-            onclick="selecionarAbrigoA()">
-                Abrigo A
-            </button>
-
-            <button type="button" id="botaoAbrigoB" class="abrigos__botao"
-            onclick="selecionarAbrigoB()">
-                Abrigo B
-            </button>
-            
-            <p id="infoAbrigo" class="abrigos__informacao">
-                Abrigo A — Ponto de apoio demonstrativo. Rota A selecionada.
-            </p>
-
-            <section class="mapa">
-
-                <img
-                    src="img/mapa-abrigo-a.png"
-                    alt="Mapa demonstrativo com rota para o Abrigo A em Juiz de Fora"
-                    id="imagemMapa"
-                    class="mapa__imagem"
-                >
-
-                <p class="mapa__aviso">
-                    Simulação acadêmica: rotas e abrigos ilustrativos,
-                    não validados pela Defesa Civil.
-                </p>
-            </section>
-        </section>
-
-
-
+            <a href="autoridade.html" class="botao botao--primario">
+              Acessar painel
+            </a>
+          </article>
+        </div>
+      </section>
     </main>
-
-    <script src="js/morador.js"></script>
-
-</body>
+  </body>
 </html>

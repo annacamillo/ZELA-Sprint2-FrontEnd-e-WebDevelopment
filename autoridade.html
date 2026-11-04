@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/componentes.css">
 </head>
 
 <body>
@@ -18,8 +19,10 @@
         </a>
 
         <nav class="cabecalho__navegacao">
-            <a href="index.html" class="cabecalho__link">Morador</a>
-            <a href="autoridade.html" class="cabecalho__link">Defesa Civil</a>
+            <a href="index.html" class="cabecalho__link">Início</a>
+            <a href="local-seguro.html" class="cabecalho__link">Locais Seguros</a>
+            <a class="cabecalho__link" href="ocorrencia.html">Registrar ocorrência</a>
+            <a href="autoridade.html" class="cabecalho__link" aria-current="page">Defesa Civil</a>
         </nav>
     </header>
 
@@ -53,27 +56,27 @@
                 <option value="Zona Sul">Zona Sul</option>
             </select>
 
-            <button type="button" class="gerenciamento__botao gerenciamento__confirmar" onclick="atualizarRegiao()">
+            <button type="button" class="botao botao--primario gerenciamento__confirmar" onclick="atualizarRegiao()">
                 Selecionar região
             </button>
 
-            <p id="mensagemRegiao" class="gerenciamento__regiao">
+            <p id="mensagemRegiao" class="gerenciamento__regiao" aria-live="polite">
                 Região monitorada: Centro
             </p>
 
-            <button type="button" class="gerenciamento__botao" onclick="selecionarRisco('baixo')">
+            <button type="button" class="botao botao--primario" onclick="selecionarRisco('baixo')">
                 Risco baixo
             </button>
 
-            <button type="button" class="gerenciamento__botao" onclick="selecionarRisco('moderado')">
+            <button type="button" class="botao botao--primario" onclick="selecionarRisco('moderado')">
                 Risco moderado
             </button>
 
-            <button type="button" class="gerenciamento__botao" onclick="selecionarRisco('alto')">
+            <button type="button" class="botao botao--primario" onclick="selecionarRisco('alto')">
                 Risco alto
             </button>
 
-            <p id="nivelRiscoAutoridade" class="gerenciamento__nivel">
+            <p id="nivelRiscoAutoridade" class="gerenciamento__nivel" aria-live="polite">
                 RISCO MODERADO
             </p>
 
@@ -91,10 +94,10 @@
             <h2>Ocorrências registradas</h2>
             <p>Consulte e verifique os registros demonstrativos.</p>
 
-            <article class="ocorrencias__item">
+            <article class="ocorrencias__item" id="cardOcorrencia1">
                 <h3>Alagamento</h3>
 
-                <p id="statusOcorrencia1" class="ocorrencias__status ocorrencias__status--pendente">
+                <p id="statusOcorrencia1" class="ocorrencias__status ocorrencias__status--pendente" aria-live="polite">
                     Pendente
                 </p>
 
@@ -102,16 +105,16 @@
                 Registro demonstrativo de alagamento.
                 </p>
 
-                <button id="botaoOcorrencia1" class="ocorrencias__botao" type="button"
+                <button id="botaoOcorrencia1" class="botao botao--primario ocorrencias__botao" type="button"
                 onclick="verificarOcorrencia(1)">
                     Marcar como verificada
                 </button>
             </article>
 
-            <article class="ocorrencias__item">
+            <article class="ocorrencias__item" id="cardOcorrencia2">
                 <h3>Árvore caída</h3>
 
-                <p id="statusOcorrencia2" class="ocorrencias__status ocorrencias__status--pendente">
+                <p id="statusOcorrencia2" class="ocorrencias__status ocorrencias__status--pendente" aria-live="polite">
                     Pendente
                 </p>
 
@@ -119,7 +122,7 @@
                     Registro demonstrativo de obstrução de via.
                 </p>
 
-                <button id="botaoOcorrencia2" class="ocorrencias__botao" type="button"
+                <button id="botaoOcorrencia2" class="botao botao--primario ocorrencias__botao" type="button"
                 onclick="verificarOcorrencia(2)">
                     Marcar como verificada
                 </button>
